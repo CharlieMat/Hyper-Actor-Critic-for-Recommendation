@@ -1,22 +1,17 @@
 ## 0. Setup
 
 ```
-conda create -n 2stageddpg python=3.9
-conda activate 2stageddpg
+conda create -n hac python=3.9
+conda activate hac
 conda install pytorch torchvision -c pytorch
 conda install pandas matplotlib scikit-learn
 pip install tqdm
 conda install -c anaconda ipykernel
-python -m ipykernel install --user --name 2stageddpg --display-name "2StageDDPG"
+python -m ipykernel install --user --name hac --display-name "HAC"
 ```
 
-## 1. Data Preparation
 
-For RL4RS data preparation, run cells in RL4RSData.ipynb. 
-
-For ML1M data preparation, run cells in ML1MData.ipynb. 
-
-## 2. Pretrain User Response Model as Environment Component
+## 1. Pretrain User Response Model as Environment Component
 
 Modify train_env.sh:
 * Change the directories, data_path, and output_path for your dataset
@@ -30,9 +25,9 @@ Modify train_env.sh:
 Run:
 > bash train_enb.sh
 
-## 3. Training
+## 2. Training
 
-#### 3.1 Script list
+#### 2.1 Script list
 
 DDPG:
 > bash train_ddpg.sh
@@ -49,11 +44,13 @@ Offline Supervise Learning:
 Two-stage DDPG:
 > bash train_ddpg_twostage.sh
 
-#### 3.2 Continue training
+#### 2.2 Continue training
 
 Use the same script but change "--n_iter ${N_ITER}" to "--n_iter ${PREVIOUS_N_ITER} ${N_ITER}"
 
-## 4. Result Observation
+## 3. Result Observation
 
-* BehaviorDDPGTraining.ipynb
-* OfflineSL.ipynb
+> bash test.sh
+
+* HACTraining.ipynb
+
