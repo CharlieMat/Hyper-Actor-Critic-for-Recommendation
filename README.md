@@ -29,6 +29,10 @@ Run:
 
 #### 2.1 Script list
 
+> bash train_xxx.sh
+
+Examples:
+
 DDPG:
 > bash train_ddpg.sh
 
@@ -40,9 +44,6 @@ Online Supervise Learning:
 
 Offline Supervise Learning:
 > train_supervise.sh
-
-Two-stage DDPG:
-> bash train_ddpg_twostage.sh
 
 #### 2.2 Continue training
 
